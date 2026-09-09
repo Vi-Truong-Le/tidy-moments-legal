@@ -3,40 +3,98 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Tidy Moments — Legal &amp; Support</title>
+<title>Tidy Moments — Clean a whole moment in one tap</title>
+<meta name="description" content="Tidy Moments declutters your camera roll by the moment — one tap clears the noise and hands you a keepsake Recap. On-device, private, and your Favorites are never touched.">
 <style>
   :root{
-    --bg:#f7f6f3; --card:#ffffff; --ink:#1c1b19; --sub:#5b5750; --line:#e7e3db; --accent:#8a6a4f;
+    --bg:#FBF6EF; --card:#ffffff; --ink:#2A2320; --sub:#6b6259; --line:#ece5da;
+    --accent:#C6603F; --accent-soft:#f3e2d7; --gold:#E0A64B; --sage:#7C9473;
   }
   @media (prefers-color-scheme: dark){
-    :root{ --bg:#15130f; --card:#1d1a15; --ink:#f3f0ea; --sub:#b9b2a5; --line:#332e26; --accent:#d0a97e; }
+    :root{ --bg:#17130F; --card:#221C16; --ink:#F5EEE4; --sub:#b4a99b; --line:#332a20;
+           --accent:#E0785A; --accent-soft:#2c2019; --gold:#E0A64B; --sage:#93a988; }
   }
   *{box-sizing:border-box}
-  body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;}
-  .wrap{max-width:640px;margin:0 auto;padding:4rem 1.4rem 5rem}
-  .badge{display:inline-block;font-size:.78rem;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);font-weight:600;margin-bottom:.6rem}
-  h1{font-size:1.9rem;margin:0 0 .4rem;letter-spacing:-.01em}
-  p.lead{color:var(--sub);margin:0 0 2.2rem;font-size:1.02rem}
-  nav{display:flex;flex-direction:column;gap:.8rem}
-  a.card{display:flex;justify-content:space-between;align-items:center;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:1.05rem 1.2rem;text-decoration:none;color:var(--ink);transition:border-color .15s}
-  a.card:hover{border-color:var(--accent)}
-  a.card span.name{font-weight:600}
-  a.card span.arrow{color:var(--sub)}
-  footer{margin-top:3rem;color:var(--sub);font-size:.85rem}
-  footer a{color:var(--accent)}
+  body{margin:0;background:var(--bg);color:var(--ink);
+    font:16px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;-webkit-font-smoothing:antialiased}
+  .serif{font-family:"New York",ui-serif,Georgia,"Times New Roman",serif}
+  .wrap{max-width:920px;margin:0 auto;padding:0 1.4rem}
+  /* hero */
+  header{text-align:center;padding:4.5rem 1.4rem 2rem}
+  .icon{width:112px;height:112px;border-radius:26px;box-shadow:0 10px 30px rgba(0,0,0,.14);display:block;margin:0 auto 1.4rem}
+  h1{font-size:clamp(2rem,5vw,3rem);line-height:1.08;letter-spacing:-.02em;margin:.2rem 0 .5rem}
+  .sub{color:var(--sub);font-size:1.15rem;max-width:34ch;margin:0 auto 1.6rem}
+  .cta{display:inline-flex;gap:.55rem;align-items:center;background:var(--accent);color:#fff;text-decoration:none;
+    font-weight:600;padding:.85rem 1.5rem;border-radius:999px;box-shadow:0 6px 18px rgba(198,96,63,.28)}
+  .note{display:block;margin-top:.7rem;color:var(--sub);font-size:.85rem}
+  /* shots */
+  .shots{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;padding:2.4rem 0 1rem}
+  .shots img{width:220px;max-width:42vw;border-radius:20px;border:1px solid var(--line);box-shadow:0 8px 24px rgba(0,0,0,.10)}
+  /* features */
+  .feat{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:1rem;padding:2.5rem 0}
+  .f{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:1.4rem}
+  .f .em{font-size:1.5rem}
+  .f h3{margin:.6rem 0 .35rem;font-size:1.12rem}
+  .f p{margin:0;color:var(--sub);font-size:.95rem}
+  /* safety band */
+  .band{background:var(--accent-soft);border-radius:22px;padding:2rem 1.6rem;margin:1.5rem 0 2.5rem;text-align:center}
+  .band h2{margin:.2rem 0 .6rem;font-size:1.5rem}
+  .band p{margin:0 auto;max-width:52ch;color:var(--sub)}
+  .band ul{list-style:none;padding:0;margin:1.2rem auto 0;max-width:48ch;text-align:left;display:grid;gap:.5rem}
+  .band li{padding-left:1.7rem;position:relative}
+  .band li:before{content:"✓";position:absolute;left:0;color:var(--sage);font-weight:700}
+  footer{border-top:1px solid var(--line);padding:2.2rem 0 3rem;text-align:center;color:var(--sub);font-size:.9rem}
+  footer a{color:var(--accent);text-decoration:none;margin:0 .5rem}
+  footer .pub{display:block;margin-top:.8rem;font-size:.82rem}
 </style>
 </head>
 <body>
+  <header>
+    <img class="icon" src="assets/icon.png" alt="Tidy Moments app icon" width="112" height="112">
+    <div class="wrap">
+      <h1 class="serif">Clean a whole moment<br>in one tap.</h1>
+      <p class="sub">Tidy Moments declutters your camera roll by the moment — and hands you back a keepsake, not just free space.</p>
+      <a class="cta" href="#" aria-disabled="true">Coming soon to the App Store</a>
+      <span class="note">iPhone · iOS 17+ · Photos stay on your device</span>
+    </div>
+  </header>
+
   <div class="wrap">
-    <div class="badge">Tidy Moments</div>
-    <h1>Legal &amp; Support</h1>
-    <p class="lead">Policies and help for the Tidy Moments app, published by Vi Truong Le.</p>
-    <nav>
-      <a class="card" href="./privacy/"><span class="name">Privacy Policy</span><span class="arrow">→</span></a>
-      <a class="card" href="./terms/"><span class="name">Terms of Use</span><span class="arrow">→</span></a>
-      <a class="card" href="./support/"><span class="name">Support</span><span class="arrow">→</span></a>
-    </nav>
-    <footer>Contact: <a href="mailto:tremainejerde8549@icloud.com">tremainejerde8549@icloud.com</a></footer>
+    <div class="shots">
+      <img src="assets/shot1.jpg" alt="One tap clears a whole moment" loading="lazy">
+      <img src="assets/shot2.jpg" alt="A keepsake Recap card after every tidy-up" loading="lazy">
+      <img src="assets/shot3.jpg" alt="Your shelf of Recap cards" loading="lazy">
+    </div>
+
+    <section class="feat">
+      <div class="f"><div class="em">👆</div><h3 class="serif">One tap per moment</h3>
+        <p>No swiping photo by photo. Tidy Moments groups your roll by event and clears the blurry, duplicate, burst and screenshot clutter in a single tap.</p></div>
+      <div class="f"><div class="em">🖼️</div><h3 class="serif">Keep the memory</h3>
+        <p>Every tidy-up creates a Recap card from the shots you kept — export it as an image or a short video, and keep them on your Shelf.</p></div>
+      <div class="f"><div class="em">🔒</div><h3 class="serif">Private by design</h3>
+        <p>Grouping, best-shot picks and deletion all run on your device. No account, no analytics, no ad tracking — nothing ever leaves your phone.</p></div>
+      <div class="f"><div class="em">📊</div><h3 class="serif">Honest numbers</h3>
+        <p>The space you free is measured for real — no scary fake “storage almost full” alerts to push you into deleting.</p></div>
+    </section>
+
+    <section class="band">
+      <h2 class="serif">Delete with confidence</h2>
+      <p>“One tap” never means “delete everything.” Tidy Moments only removes the clutter it flags — and you stay in control.</p>
+      <ul>
+        <li>Your <strong>Favorites</strong> are never auto-selected for removal</li>
+        <li>Videos and single, non-duplicate photos are always kept</li>
+        <li>Review and fine-tune every pick before you confirm</li>
+        <li>Deleted photos go to <strong>Recently Deleted</strong> — restorable for 30 days</li>
+      </ul>
+    </section>
   </div>
+
+  <footer>
+    <div class="wrap">
+      <a href="./privacy/">Privacy Policy</a>·<a href="./terms/">Terms of Use</a>·<a href="./support/">Support</a>
+      <span class="pub">Published by Vi Truong Le · <a href="mailto:tremainejerde8549@icloud.com">tremainejerde8549@icloud.com</a></span>
+      <span class="pub">© 2026 Tidy Moments</span>
+    </div>
+  </footer>
 </body>
 </html>
